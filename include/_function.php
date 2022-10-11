@@ -1,5 +1,5 @@
 <?php
-  require '_dbconnect.php';
+  require 'include/_dbconnect.php';
 
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -44,11 +44,11 @@
      
     }
     elseif(isset($_POST['logout'])){
-        session_start();
-        session_unset();
-        session_destroy();
-        echo "<script>window.location.href='/Login.php';</script>";
-    }
+      session_start();
+      session_unset();
+      session_destroy();
+      echo "<script>window.location.href='/Login.php';</script>";
+  }
 
     else {
         $name = $_POST['name'];
@@ -71,6 +71,3 @@
       }
     }
   }
-
-
-?>
